@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>https://lwxn.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>Leetcodes on My New Hugo Site</title>
+    <link>https://lwxn.github.io/leetcode/</link>
+    <description>Recent content in Leetcodes on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 17 Jan 2021 21:46:28 +0800</lastBuildDate><atom:link href="https://lwxn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jan 2021 21:46:28 +0800</lastBuildDate><atom:link href="https://lwxn.github.io/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5 Longest Palindromic Substring</title>
       <link>https://lwxn.github.io/leetcode/5-longest-palindromic-substring/</link>
@@ -54,28 +54,6 @@ class Solution { public: int lengthOfLongestSubstring(string s) { int ans = 0,i 
       <description>第一种暴力解：
 class Solution { public: vector&amp;lt;int&amp;gt; twoSum(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { vector&amp;lt;int&amp;gt;ans; for(int i = 0;i&amp;lt;nums.size();i++) { for(int j = i+1;j&amp;lt;nums.size();j++) { if(nums[i] + nums[j] == target) { ans.push_back(i); ans.push_back(j); return ans; } } } return ans; } }; 第二种，使用hashmap
 class Solution { public: vector&amp;lt;int&amp;gt; twoSum(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { unordered_map&amp;lt;int,int&amp;gt;Map; vector&amp;lt;int&amp;gt;ans; for(int i = 0;i&amp;lt;nums.size();i++) { auto it = Map.find(target-nums[i]); if(it != Map.end()) { return {i,it-&amp;gt;second}; } Map[nums[i]] = i; } return ans; } }; </description>
-    </item>
-    
-    <item>
-      <title>Hi，this is lwxn&#39;s blog</title>
-      <link>https://lwxn.github.io/posts/introduction/</link>
-      <pubDate>Fri, 08 Jan 2021 09:37:04 +0800</pubDate>
-      
-      <guid>https://lwxn.github.io/posts/introduction/</guid>
-      <description>很高兴你可以看到我的小岛~</description>
-    </item>
-    
-    <item>
-      <title>今天好难过</title>
-      <link>https://lwxn.github.io/posts/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/</link>
-      <pubDate>Thu, 07 Jan 2021 19:44:30 +0800</pubDate>
-      
-      <guid>https://lwxn.github.io/posts/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/</guid>
-      <description>一点点内心想法：
-2021/1/8：
-昨天梦见下雪了，真是可笑，广州这种地方是不会下雪的。但是睡梦中隐隐约约听见了风怒吼着卷动树叶的声音，像是冬天终于迎来了它的征程。这地方终于有了点冬天的味道，不是吗。
-2021/1/15：
-今天去医院了，emmmm</description>
     </item>
     
   </channel>
