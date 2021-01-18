@@ -6,7 +6,16 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 17 Jan 2021 21:46:28 +0800</lastBuildDate><atom:link href="https://lwxn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jan 2021 11:26:53 +0800</lastBuildDate><atom:link href="https://lwxn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>6 ZigZag Conversion</title>
+      <link>https://lwxn.github.io/posts/6-zigzag-conversion/</link>
+      <pubDate>Mon, 18 Jan 2021 11:26:53 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/6-zigzag-conversion/</guid>
+      <description>class Solution { public: string convert(string s, int numRows) { if(s.size() == 0) return &amp;#34;&amp;#34;; int n = s.size(); vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;Map(numRows,vector&amp;lt;char&amp;gt;(n,&amp;#39; &amp;#39;)); int mode = 0; int i = 0; int x = -1,y = 0; while(i&amp;lt;n) { //竖排  if(mode == 0) { for(int j = 0;j&amp;lt;numRows &amp;amp;&amp;amp; i&amp;lt;n;j++) { if(j == 0) x++; Map[j][x] = s[i]; y = j; i++; } } else { for(int j = 1;j&amp;lt;numRows-1 &amp;amp;&amp;amp; i&amp;lt;n;j++) { x++; y--; Map[y][x] = s[i]; i++; } } mode = (mode+1)%2; } string ans = &amp;#34;&amp;#34;; for(int i = 0;i&amp;lt;numRows;i++) { for(int j = 0;j&amp;lt;n;j++) { if(Map[i][j] !</description>
+    </item>
+    
     <item>
       <title>5 Longest Palindromic Substring</title>
       <link>https://lwxn.github.io/posts/5-longest-palindromic-substring/</link>
@@ -75,7 +84,7 @@ class Solution { public: vector&amp;lt;int&amp;gt; twoSum(vector&amp;lt;int&amp;
 2021/1/8：
 昨天梦见下雪了，真是可笑，广州这种地方是不会下雪的。但是睡梦中隐隐约约听见了风怒吼着卷动树叶的声音，像是冬天终于迎来了它的征程。这地方终于有了点冬天的味道，不是吗。
 2021/1/15：
-今天去医院了，emmmm</description>
+今天去医院了，emmmmm</description>
     </item>
     
   </channel>

@@ -29,7 +29,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwxn.github.io/posts/" />
-<meta property="og:updated_time" content="2021-01-17T21:46:28+08:00" />
+<meta property="og:updated_time" content="2021-01-18T11:26:53+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content=""/>
@@ -99,6 +99,20 @@
 
 
 
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      6 ZigZag Conversion
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: string convert(string s, int numRows) { if(s.size() == 0) return &#34;&#34;; int n = s.size(); vector&lt;vector&lt;char&gt;&gt;Map(numRows,vector&lt;char&gt;(n,&#39; &#39;)); int mode = 0; int i = 0; int x = -1,y = 0; while(i&lt;n) { //竖排  if(mode == 0) { for(int j = 0;j&lt;numRows &amp;&amp; i&lt;n;j&#43;&#43;) { if(j == 0) x&#43;&#43;; Map[j][x] = s[i]; y = j; i&#43;&#43;; } } else { for(int j = 1;j&lt;numRows-1 &amp;&amp; i&lt;n;j&#43;&#43;) { x&#43;&#43;; y--; Map[y][x] = s[i]; i&#43;&#43;; } } mode = (mode&#43;1)%2; } string ans = &#34;&#34;; for(int i = 0;i&lt;numRows;i&#43;&#43;) { for(int j = 0;j&lt;n;j&#43;&#43;) { if(Map[i][j] !...</p>
+  </section>
+  <footer class="entry-footer">January 18, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 6 ZigZag Conversion" href="https://lwxn.github.io/posts/6-zigzag-conversion/"></a>
+</article>
 <article class="post-entry"> 
 
   <header class="entry-header">
@@ -199,7 +213,7 @@ class Solution { public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, i
 2021/1/8：
 昨天梦见下雪了，真是可笑，广州这种地方是不会下雪的。但是睡梦中隐隐约约听见了风怒吼着卷动树叶的声音，像是冬天终于迎来了它的征程。这地方终于有了点冬天的味道，不是吗。
 2021/1/15：
-今天去医院了，emmmm...</p>
+今天去医院了，emmmmm...</p>
   </section>
   <footer class="entry-footer">January 7, 2021
 </footer>
