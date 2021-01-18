@@ -6,7 +6,34 @@
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 18 Jan 2021 11:26:53 +0800</lastBuildDate><atom:link href="https://lwxn.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jan 2021 18:58:28 +0800</lastBuildDate><atom:link href="https://lwxn.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>9 Palindrome Number</title>
+      <link>https://lwxn.github.io/posts/9-palindrome-number/</link>
+      <pubDate>Mon, 18 Jan 2021 18:58:28 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/9-palindrome-number/</guid>
+      <description>class Solution { public: bool isPalindrome(int x) { string s = to_string(x); for(int i = 0;i&amp;lt;s.size();i++) { if(s[i] != s[s.size()-i-1]) return false; } return true; } };``` </description>
+    </item>
+    
+    <item>
+      <title>8 String to Integer (Atoi)</title>
+      <link>https://lwxn.github.io/posts/8-string-to-integer-atoi/</link>
+      <pubDate>Mon, 18 Jan 2021 18:55:04 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/8-string-to-integer-atoi/</guid>
+      <description>class Solution { public: int myAtoi(string s) { int i = 0,flag = 0; while(i&amp;lt;s.size() &amp;amp;&amp;amp; s[i] == &amp;#39; &amp;#39;) i++; if(i == s.size() || !(s[i] == &amp;#39;+&amp;#39; || s[i] == &amp;#39;-&amp;#39; || isdigit(s[i]))) return 0; if(s[i] == &amp;#39;+&amp;#39; || s[i] == &amp;#39;-&amp;#39;) { flag = s[i] == &amp;#39;-&amp;#39; ? 1:0; i++; } long ans = 0; while(i&amp;lt;s.size() &amp;amp;&amp;amp; isdigit(s[i])) { ans = ans*10 + s[i] - &amp;#39;0&amp;#39;; if(flag) { if(-ans &amp;gt; INT_MAX) return INT_MAX; if(-ans &amp;lt; INT_MIN) return INT_MIN; } else { if(ans &amp;gt; INT_MAX) return INT_MAX; if(ans &amp;lt; INT_MIN) return INT_MIN; } i++; } ans = flag ?</description>
+    </item>
+    
+    <item>
+      <title>7 Reverse Integer</title>
+      <link>https://lwxn.github.io/posts/7-reverse-integer/</link>
+      <pubDate>Mon, 18 Jan 2021 12:02:41 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/7-reverse-integer/</guid>
+      <description>class Solution { public: int reverse(int x) { long X = x; int flag = 0; if(X &amp;lt; 0) { X = -X; flag = 1; } long ans = 0; string s = to_string(X); for(int i = s.size()-1;i&amp;gt;=0;i--) ans = ans*10 + s[i] - &amp;#39;0&amp;#39;; ans = flag ? -ans : ans; int Max = 2147483647; int Min = -2147483648; if(ans &amp;lt;= Max &amp;amp;&amp;amp; ans &amp;gt;= Min) return ans; else return 0; } }; </description>
+    </item>
+    
     <item>
       <title>6 ZigZag Conversion</title>
       <link>https://lwxn.github.io/posts/6-zigzag-conversion/</link>
