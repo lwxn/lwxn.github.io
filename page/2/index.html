@@ -29,7 +29,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwxn.github.io/" />
-<meta property="og:updated_time" content="2021-01-18T18:58:28+08:00" />
+<meta property="og:updated_time" content="2021-01-20T16:08:28+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="My New Hugo Site"/>
 <meta name="twitter:description" content=""/>
@@ -109,6 +109,79 @@
 
 
 
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      4 Median of Two Sorted Arrays
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: double findMedianSortedArrays(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { int m = nums1.size(); int n = nums2.size(); int k1,k2; //odd  if( (m&#43;n)%2 == 0) { k1 = (m&#43;n)/2; k2 = k1-1; } else { k1 = (m&#43;n)/2; k2 = k1; } int i = 0,j = 0; int temp = 0; int t = 0; while(i&lt;nums1.size() &amp;&amp; j &lt;nums2.size()) { if(nums1[i] &lt;= nums2[j]) { if(t == k1) temp &#43;= nums1[i]; if(t == k2) temp &#43;= nums1[i]; i&#43;&#43;; } else { if(t == k1) temp &#43;= nums2[j]; if(t == k2) temp &#43;= nums2[j]; j&#43;&#43;; } t&#43;&#43;; } while(i&lt;nums1....</p>
+  </section>
+  <footer class="entry-footer">January 17, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 4 Median of Two Sorted Arrays" href="https://lwxn.github.io/posts/4-median-of-two-sorted-arrays/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      3 Longest Substring Without Repeating Characters
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>滑动窗口
+class Solution { public: int lengthOfLongestSubstring(string s) { int ans = 0,i = 0,j = 1; if(s.size() == 1) ans = 1; unordered_map&lt;char,int&gt;Map; Map[s[i]] = i; while(i&lt;s.size() &amp;&amp; j&lt;s.size()) { auto it = Map.find(s[j]); if(it != Map.end() &amp;&amp; it-&gt;second &gt;= i) { ans = max(ans,j-i); i = Map[s[j]] &#43; 1; } else { Map[s[j]] = j; ans = max(ans,j-i&#43;1); j&#43;&#43;; } } return ans; } }; ...</p>
+  </section>
+  <footer class="entry-footer">January 17, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 3 Longest Substring Without Repeating Characters" href="https://lwxn.github.io/posts/3-longest-substring-without-repeating-characters/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      2 Add Two Numbers
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode() : val(0), next(nullptr) {} * ListNode(int x) : val(x), next(nullptr) {} * ListNode(int x, ListNode *next) : val(x), next(next) {} * }; */ class Solution { public: ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) { ListNode *p = new ListNode(0); ListNode *head = p; int c = 0; while(l1 &amp;&amp; l2) { int r = (l1-&gt;val &#43; l2-&gt;val &#43; c) %10; c = (l1-&gt;val &#43; l2-&gt;val &#43; c)/10; p-&gt;next = new ListNode(r); p = p-&gt;next; l1 = l1-&gt;next; l2 = l2-&gt;next; } while(l1) { int r = (l1-&gt;val &#43; c)%10; c = (l1-&gt;val &#43; c)/10; p-&gt;next = new ListNode(r); p = p-&gt;next; l1 = l1-&gt;next; } while(l2) { int r = (l2-&gt;val &#43; c)%10; c = (l2-&gt;val &#43; c)/10; p-&gt;next = new ListNode(r); p = p-&gt;next; l2 = l2-&gt;next; } if(c) { p-&gt;next = new ListNode(c); } return head-&gt;next; } }; &#39;&#39;&#39; ...</p>
+  </section>
+  <footer class="entry-footer">January 17, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 2 Add Two Numbers" href="https://lwxn.github.io/posts/2-add-two-numbers/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      1 Two Sum
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>第一种暴力解：
+class Solution { public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) { vector&lt;int&gt;ans; for(int i = 0;i&lt;nums.size();i&#43;&#43;) { for(int j = i&#43;1;j&lt;nums.size();j&#43;&#43;) { if(nums[i] &#43; nums[j] == target) { ans.push_back(i); ans.push_back(j); return ans; } } } return ans; } }; 第二种，使用hashmap
+class Solution { public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) { unordered_map&lt;int,int&gt;Map; vector&lt;int&gt;ans; for(int i = 0;i&lt;nums.size();i&#43;&#43;) { auto it = Map.find(target-nums[i]); if(it != Map.end()) { return {i,it-&gt;second}; } Map[nums[i]] = i; } return ans; } }; ...</p>
+  </section>
+  <footer class="entry-footer">January 17, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 1 Two Sum" href="https://lwxn.github.io/posts/1-two-sum/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      Hi，this is lwxn&#39;s blog
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>很高兴你可以看到我的小岛~...</p>
+  </section>
+  <footer class="entry-footer">January 8, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to Hi，this is lwxn&#39;s blog" href="https://lwxn.github.io/posts/introduction/"></a>
+</article>
 <article class="post-entry"> 
 
   <header class="entry-header">
