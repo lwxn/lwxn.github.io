@@ -29,7 +29,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwxn.github.io/posts/" />
-<meta property="og:updated_time" content="2021-01-22T13:45:50+08:00" />
+<meta property="og:updated_time" content="2021-01-22T14:53:02+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content=""/>
@@ -99,6 +99,50 @@
 
 
 
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      18 4Sum
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>三数之和加个循环
+class Solution { public: vector&lt;vector&lt;int&gt;&gt; fourSum(vector&lt;int&gt;&amp; nums, int target) { vector&lt;vector&lt;int&gt;&gt;ans; sort(nums.begin(),nums.end()); int n = nums.size(); for(int l = 0;l&lt;n;l&#43;&#43;) { while(l != 0 &amp;&amp; l&lt;n &amp;&amp; nums[l] == nums[l-1]) l&#43;&#43;; for(int i = l&#43;1;i&lt;n;i&#43;&#43;) { while(i != l&#43;1 &amp;&amp; i&lt;n &amp;&amp; nums[i] == nums[i-1]) i&#43;&#43;; int j = i &#43; 1; int k = n - 1; while(j&lt;k) { int t = nums[i] &#43; nums[j] &#43;nums[k] &#43; nums[l]; if(t == target) { ans....</p>
+  </section>
+  <footer class="entry-footer">January 21, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 18 4Sum" href="https://lwxn.github.io/posts/18-4sum/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      17 Letter Combinations of a Phone Number
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: vector&lt;string&gt;ans; vector&lt;vector&lt;char&gt;&gt;num = {{&#39;a&#39;,&#39;b&#39;,&#39;c&#39;},{&#39;d&#39;,&#39;e&#39;,&#39;f&#39;}, {&#39;g&#39;,&#39;h&#39;,&#39;i&#39;},{&#39;j&#39;,&#39;k&#39;,&#39;l&#39;},{&#39;m&#39;,&#39;n&#39;,&#39;o&#39;},{&#39;p&#39;,&#39;q&#39;,&#39;r&#39;,&#39;s&#39;}, {&#39;t&#39;,&#39;u&#39;,&#39;v&#39;},{&#39;w&#39;,&#39;x&#39;,&#39;y&#39;,&#39;z&#39;}}; vector&lt;string&gt; letterCombinations(string digits) { if(digits.size() == 0) return ans; string s = &#34;&#34;; dfs(s,0,digits); return ans; } void dfs(string s,int begin,string digits) { if(begin == digits.size()) { ans.push_back(s); return; } int t = digits[begin] - &#39;2&#39;; for(char c : num[t]) { s.push_back(c); dfs(s,begin&#43;1,digits); s.pop_back(); } } };``` ...</p>
+  </section>
+  <footer class="entry-footer">January 21, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 17 Letter Combinations of a Phone Number" href="https://lwxn.github.io/posts/17-letter-combinations-of-a-phone-number/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      16 3Sum Closest
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>这道题蛮简单的，双指针走起
+class Solution { public: int threeSumClosest(vector&lt;int&gt;&amp; nums, int target) { sort(nums.begin(),nums.end()); int n = nums.size(); int tmp = nums[0] &#43; nums[1] &#43;nums[2]; for(int i = 0;i&lt;n;i&#43;&#43;) { while(i != 0 &amp;&amp; i&lt;n &amp;&amp; nums[i] == nums[i-1]) i&#43;&#43;; int j = i &#43; 1; int k = n - 1; while(j&lt;k) { int t = nums[i] &#43; nums[j] &#43;nums[k]; if(abs(t - target) &lt; abs(tmp - target)) { tmp = t; } if(t &gt; target &amp;&amp; j&lt;k) k--; else if(t &lt; target &amp;&amp; j&lt;k) j&#43;&#43;; else{ return t; } } } return tmp; } };``` ...</p>
+  </section>
+  <footer class="entry-footer">January 21, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 16 3Sum Closest" href="https://lwxn.github.io/posts/16-3sum-closest/"></a>
+</article>
 <article class="post-entry"> 
 
   <header class="entry-header">
@@ -199,49 +243,6 @@ class Solution { public: int maxArea(vector&lt;int&gt;&amp; height) { int k1 = 0
   <footer class="entry-footer">January 18, 2021
 </footer>
   <a class="entry-link" aria-label="post link to 8 String to Integer (Atoi)" href="https://lwxn.github.io/posts/8-string-to-integer-atoi/"></a>
-</article>
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      7 Reverse Integer
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>class Solution { public: int reverse(int x) { long X = x; int flag = 0; if(X &lt; 0) { X = -X; flag = 1; } long ans = 0; string s = to_string(X); for(int i = s.size()-1;i&gt;=0;i--) ans = ans*10 &#43; s[i] - &#39;0&#39;; ans = flag ? -ans : ans; int Max = 2147483647; int Min = -2147483648; if(ans &lt;= Max &amp;&amp; ans &gt;= Min) return ans; else return 0; } }; ...</p>
-  </section>
-  <footer class="entry-footer">January 18, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to 7 Reverse Integer" href="https://lwxn.github.io/posts/7-reverse-integer/"></a>
-</article>
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      6 ZigZag Conversion
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>class Solution { public: string convert(string s, int numRows) { if(s.size() == 0) return &#34;&#34;; int n = s.size(); vector&lt;vector&lt;char&gt;&gt;Map(numRows,vector&lt;char&gt;(n,&#39; &#39;)); int mode = 0; int i = 0; int x = -1,y = 0; while(i&lt;n) { //竖排  if(mode == 0) { for(int j = 0;j&lt;numRows &amp;&amp; i&lt;n;j&#43;&#43;) { if(j == 0) x&#43;&#43;; Map[j][x] = s[i]; y = j; i&#43;&#43;; } } else { for(int j = 1;j&lt;numRows-1 &amp;&amp; i&lt;n;j&#43;&#43;) { x&#43;&#43;; y--; Map[y][x] = s[i]; i&#43;&#43;; } } mode = (mode&#43;1)%2; } string ans = &#34;&#34;; for(int i = 0;i&lt;numRows;i&#43;&#43;) { for(int j = 0;j&lt;n;j&#43;&#43;) { if(Map[i][j] !...</p>
-  </section>
-  <footer class="entry-footer">January 18, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to 6 ZigZag Conversion" href="https://lwxn.github.io/posts/6-zigzag-conversion/"></a>
-</article>
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      5 Longest Palindromic Substring
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>dp
-class Solution { public: string longestPalindrome(string s) { if(s.size() == 0) return &#34;&#34;; int n = s.size(),ans = 1,l1 = 0,l2 = 0; vector&lt;vector&lt;int&gt;&gt;dp(n,vector&lt;int&gt;(n,0)); for(int i = 0;i&lt;n;i&#43;&#43;) dp[i][i] = 1; for(int l = 1;l&lt;n;l&#43;&#43;) { for(int i = 0;i&lt;n-l;i&#43;&#43;) { int j = i&#43;l; if(j == i&#43;1) { dp[i][j] = s[i] == s[j] ? 2 : 0; } else { if(dp[i&#43;1][j-1] &amp;&amp; s[i] == s[j]) dp[i][j] = dp[i&#43;1][j-1] &#43; 2; } if(ans &lt; dp[i][j]) { ans = dp[i][j]; l1 = i; l2 = j; } } } return s....</p>
-  </section>
-  <footer class="entry-footer">January 17, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to 5 Longest Palindromic Substring" href="https://lwxn.github.io/posts/5-longest-palindromic-substring/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

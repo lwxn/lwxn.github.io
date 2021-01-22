@@ -29,7 +29,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwxn.github.io/posts/" />
-<meta property="og:updated_time" content="2021-01-22T13:45:50+08:00" />
+<meta property="og:updated_time" content="2021-01-22T14:53:02+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content=""/>
@@ -99,6 +99,48 @@
 
 
 
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      28 Implement StrStr()
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: int strStr(string haystack, string needle) { int n = needle.size(); if(!n) return 0; for(int i = 0;i&lt;haystack.size();i&#43;&#43;) { if(i &#43; n - 1 &lt; haystack.size()) { if(haystack.substr(i,n) == needle) return i; } else { return -1; } } return -1; } }; ...</p>
+  </section>
+  <footer class="entry-footer">January 22, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 28 Implement StrStr()" href="https://lwxn.github.io/posts/28-implement-strstr/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      27 Remove Element
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: int removeElement(vector&lt;int&gt;&amp; nums, int val) { if(nums.size() == 0) return 0; int i = 0,j = 0; while(j&lt;nums.size()) { while(i&lt;nums.size() &amp;&amp; nums[i] != val) i&#43;&#43;; j = j &lt;= i ? i&#43;1 : j; while(j&lt;nums.size() &amp;&amp; nums[j] == val) j&#43;&#43;; if(i &lt; nums.size() &amp;&amp; j&lt; nums.size()) { swap(nums[i],nums[j]); i&#43;&#43;; j&#43;&#43;; } else break; } return i; } };``` ...</p>
+  </section>
+  <footer class="entry-footer">January 22, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 27 Remove Element" href="https://lwxn.github.io/posts/27-remove-element/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      26 Remove Duplicates From Sorted Array
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: int removeDuplicates(vector&lt;int&gt;&amp; nums) { if(nums.size() == 0) return 0; int i = 0,j = 1; while(j&lt;nums.size()) { while(j&lt;nums.size()&amp;&amp;nums[j] == nums[i]) j&#43;&#43;; if(j&lt;nums.size()) { nums[&#43;&#43;i] = nums[j&#43;&#43;]; } } return i&#43;1; } };``` ...</p>
+  </section>
+  <footer class="entry-footer">January 22, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 26 Remove Duplicates From Sorted Array" href="https://lwxn.github.io/posts/26-remove-duplicates-from-sorted-array/"></a>
+</article>
 <article class="post-entry"> 
 
   <header class="entry-header">
@@ -196,50 +238,6 @@
   <footer class="entry-footer">January 21, 2021
 </footer>
   <a class="entry-link" aria-label="post link to 19 Remove Nth Node From End of List" href="https://lwxn.github.io/posts/19-remove-nth-node-from-end-of-list/"></a>
-</article>
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      18 4Sum
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>三数之和加个循环
-class Solution { public: vector&lt;vector&lt;int&gt;&gt; fourSum(vector&lt;int&gt;&amp; nums, int target) { vector&lt;vector&lt;int&gt;&gt;ans; sort(nums.begin(),nums.end()); int n = nums.size(); for(int l = 0;l&lt;n;l&#43;&#43;) { while(l != 0 &amp;&amp; l&lt;n &amp;&amp; nums[l] == nums[l-1]) l&#43;&#43;; for(int i = l&#43;1;i&lt;n;i&#43;&#43;) { while(i != l&#43;1 &amp;&amp; i&lt;n &amp;&amp; nums[i] == nums[i-1]) i&#43;&#43;; int j = i &#43; 1; int k = n - 1; while(j&lt;k) { int t = nums[i] &#43; nums[j] &#43;nums[k] &#43; nums[l]; if(t == target) { ans....</p>
-  </section>
-  <footer class="entry-footer">January 21, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to 18 4Sum" href="https://lwxn.github.io/posts/18-4sum/"></a>
-</article>
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      17 Letter Combinations of a Phone Number
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>class Solution { public: vector&lt;string&gt;ans; vector&lt;vector&lt;char&gt;&gt;num = {{&#39;a&#39;,&#39;b&#39;,&#39;c&#39;},{&#39;d&#39;,&#39;e&#39;,&#39;f&#39;}, {&#39;g&#39;,&#39;h&#39;,&#39;i&#39;},{&#39;j&#39;,&#39;k&#39;,&#39;l&#39;},{&#39;m&#39;,&#39;n&#39;,&#39;o&#39;},{&#39;p&#39;,&#39;q&#39;,&#39;r&#39;,&#39;s&#39;}, {&#39;t&#39;,&#39;u&#39;,&#39;v&#39;},{&#39;w&#39;,&#39;x&#39;,&#39;y&#39;,&#39;z&#39;}}; vector&lt;string&gt; letterCombinations(string digits) { if(digits.size() == 0) return ans; string s = &#34;&#34;; dfs(s,0,digits); return ans; } void dfs(string s,int begin,string digits) { if(begin == digits.size()) { ans.push_back(s); return; } int t = digits[begin] - &#39;2&#39;; for(char c : num[t]) { s.push_back(c); dfs(s,begin&#43;1,digits); s.pop_back(); } } };``` ...</p>
-  </section>
-  <footer class="entry-footer">January 21, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to 17 Letter Combinations of a Phone Number" href="https://lwxn.github.io/posts/17-letter-combinations-of-a-phone-number/"></a>
-</article>
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      16 3Sum Closest
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>这道题蛮简单的，双指针走起
-class Solution { public: int threeSumClosest(vector&lt;int&gt;&amp; nums, int target) { sort(nums.begin(),nums.end()); int n = nums.size(); int tmp = nums[0] &#43; nums[1] &#43;nums[2]; for(int i = 0;i&lt;n;i&#43;&#43;) { while(i != 0 &amp;&amp; i&lt;n &amp;&amp; nums[i] == nums[i-1]) i&#43;&#43;; int j = i &#43; 1; int k = n - 1; while(j&lt;k) { int t = nums[i] &#43; nums[j] &#43;nums[k]; if(abs(t - target) &lt; abs(tmp - target)) { tmp = t; } if(t &gt; target &amp;&amp; j&lt;k) k--; else if(t &lt; target &amp;&amp; j&lt;k) j&#43;&#43;; else{ return t; } } } return tmp; } };``` ...</p>
-  </section>
-  <footer class="entry-footer">January 21, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to 16 3Sum Closest" href="https://lwxn.github.io/posts/16-3sum-closest/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

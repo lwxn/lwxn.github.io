@@ -6,7 +6,34 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 22 Jan 2021 13:45:50 +0800</lastBuildDate><atom:link href="https://lwxn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jan 2021 14:53:02 +0800</lastBuildDate><atom:link href="https://lwxn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>28 Implement StrStr()</title>
+      <link>https://lwxn.github.io/posts/28-implement-strstr/</link>
+      <pubDate>Fri, 22 Jan 2021 14:53:02 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/28-implement-strstr/</guid>
+      <description>class Solution { public: int strStr(string haystack, string needle) { int n = needle.size(); if(!n) return 0; for(int i = 0;i&amp;lt;haystack.size();i++) { if(i + n - 1 &amp;lt; haystack.size()) { if(haystack.substr(i,n) == needle) return i; } else { return -1; } } return -1; } }; </description>
+    </item>
+    
+    <item>
+      <title>27 Remove Element</title>
+      <link>https://lwxn.github.io/posts/27-remove-element/</link>
+      <pubDate>Fri, 22 Jan 2021 14:47:39 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/27-remove-element/</guid>
+      <description>class Solution { public: int removeElement(vector&amp;lt;int&amp;gt;&amp;amp; nums, int val) { if(nums.size() == 0) return 0; int i = 0,j = 0; while(j&amp;lt;nums.size()) { while(i&amp;lt;nums.size() &amp;amp;&amp;amp; nums[i] != val) i++; j = j &amp;lt;= i ? i+1 : j; while(j&amp;lt;nums.size() &amp;amp;&amp;amp; nums[j] == val) j++; if(i &amp;lt; nums.size() &amp;amp;&amp;amp; j&amp;lt; nums.size()) { swap(nums[i],nums[j]); i++; j++; } else break; } return i; } };``` </description>
+    </item>
+    
+    <item>
+      <title>26 Remove Duplicates From Sorted Array</title>
+      <link>https://lwxn.github.io/posts/26-remove-duplicates-from-sorted-array/</link>
+      <pubDate>Fri, 22 Jan 2021 14:02:59 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/26-remove-duplicates-from-sorted-array/</guid>
+      <description>class Solution { public: int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if(nums.size() == 0) return 0; int i = 0,j = 1; while(j&amp;lt;nums.size()) { while(j&amp;lt;nums.size()&amp;amp;&amp;amp;nums[j] == nums[i]) j++; if(j&amp;lt;nums.size()) { nums[++i] = nums[j++]; } } return i+1; } };``` </description>
+    </item>
+    
     <item>
       <title>25 Reverse Nodes in K Group</title>
       <link>https://lwxn.github.io/posts/25-reverse-nodes-in-k-group/</link>
