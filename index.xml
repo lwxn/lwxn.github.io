@@ -6,7 +6,99 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 20 Jan 2021 16:08:28 +0800</lastBuildDate><atom:link href="https://lwxn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jan 2021 13:45:50 +0800</lastBuildDate><atom:link href="https://lwxn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>25 Reverse Nodes in K Group</title>
+      <link>https://lwxn.github.io/posts/25-reverse-nodes-in-k-group/</link>
+      <pubDate>Fri, 22 Jan 2021 13:45:50 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/25-reverse-nodes-in-k-group/</guid>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode() : val(0), next(nullptr) {} * ListNode(int x) : val(x), next(nullptr) {} * ListNode(int x, ListNode *next) : val(x), next(next) {} * }; */ class Solution { public: void print(ListNode* link) { ListNode* p = link; while(p) { cout&amp;lt;&amp;lt;p-&amp;gt;val&amp;lt;&amp;lt;&amp;#34; &amp;#34;; p = p-&amp;gt;next; } cout&amp;lt;&amp;lt;endl; } ListNode* reverse(ListNode* head) { ListNode* p = head,*prev = p-&amp;gt;next; while(prev) { ListNode* r = prev-&amp;gt;next; prev-&amp;gt;next = p; p = prev; prev = r; } head-&amp;gt;next = nullptr; return p; } ListNode* reverseKGroup(ListNode* head, int k) { ListNode* H = new ListNode(0); H-&amp;gt;next = head; ListNode* p = H,*tail = nullptr; while(p) { int flag = 0; tail = p; for(int i = 0;i&amp;lt;k;i++) { tail = tail-&amp;gt;next; if(!</description>
+    </item>
+    
+    <item>
+      <title>24 Swap Nodes in Pairs</title>
+      <link>https://lwxn.github.io/posts/24-swap-nodes-in-pairs/</link>
+      <pubDate>Fri, 22 Jan 2021 12:37:02 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/24-swap-nodes-in-pairs/</guid>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode() : val(0), next(nullptr) {} * ListNode(int x) : val(x), next(nullptr) {} * ListNode(int x, ListNode *next) : val(x), next(next) {} * }; */ class Solution { public: ListNode* swapPairs(ListNode* head) { ListNode * H = new ListNode(0); H-&amp;gt;next = head; ListNode *b = H,* p = head,*r = nullptr,*e = nullptr; while(p) { r = p-&amp;gt;next; if(!</description>
+    </item>
+    
+    <item>
+      <title>23 Merge K Sorted Lists</title>
+      <link>https://lwxn.github.io/posts/23-merge-k-sorted-lists/</link>
+      <pubDate>Thu, 21 Jan 2021 21:34:34 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/23-merge-k-sorted-lists/</guid>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode() : val(0), next(nullptr) {} * ListNode(int x) : val(x), next(nullptr) {} * ListNode(int x, ListNode *next) : val(x), next(next) {} * }; */ class Solution { public: const static int cmp(const int a,const int b) { return a &amp;lt; b; } ListNode* mergeKLists(vector&amp;lt;ListNode*&amp;gt;&amp;amp; lists) { vector&amp;lt;int&amp;gt;list; ListNode* p = nullptr; for(ListNode* p : lists) { while(p) { ListNode* t = p; p = p-&amp;gt;next; t-&amp;gt;next = nullptr; list.</description>
+    </item>
+    
+    <item>
+      <title>22 Generate Parentheses</title>
+      <link>https://lwxn.github.io/posts/22-generate-parentheses/</link>
+      <pubDate>Thu, 21 Jan 2021 21:23:23 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/22-generate-parentheses/</guid>
+      <description>class Solution { public: vector&amp;lt;string&amp;gt;ans; char c[2] = {&amp;#39;(&amp;#39;,&amp;#39;)&amp;#39;}; vector&amp;lt;string&amp;gt; generateParenthesis(int n) { if(!n) return ans; int left = 0,right = 0; dfs(&amp;#34;(&amp;#34;,1,n,n-1,n); return ans; } void dfs(string s,int begin,int n,int left,int right) { if(s.size() == 2*n &amp;amp;&amp;amp; !left &amp;amp;&amp;amp; !right) { ans.push_back(s); return; } for(int i = 0;i&amp;lt;2;i++) { //left  if(i == 0) { if(left) { s.push_back(c[i]); // cout&amp;lt;&amp;lt;s&amp;lt;&amp;lt;endl;  dfs(s,begin+1,n,left-1,right); s.pop_back(); } }//right  else { if(right &amp;gt; left) { s.</description>
+    </item>
+    
+    <item>
+      <title>21 Merge Two Sorted Lists</title>
+      <link>https://lwxn.github.io/posts/21-merge-two-sorted-lists/</link>
+      <pubDate>Thu, 21 Jan 2021 21:05:18 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/21-merge-two-sorted-lists/</guid>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode() : val(0), next(nullptr) {} * ListNode(int x) : val(x), next(nullptr) {} * ListNode(int x, ListNode *next) : val(x), next(next) {} * }; */ class Solution { public: ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) { ListNode* head = new ListNode(0),*p = head; while(l1 &amp;amp;&amp;amp; l2) { if(l1-&amp;gt;val &amp;lt; l2-&amp;gt;val) { p-&amp;gt;next = l1; l1 = l1-&amp;gt;next; } else { p-&amp;gt;next = l2; l2 = l2-&amp;gt;next; } p = p-&amp;gt;next; } if(l1) p-&amp;gt;next = l1; if(l2) p-&amp;gt;next = l2; return head-&amp;gt;next; } };``` </description>
+    </item>
+    
+    <item>
+      <title>20 Valid Parentheses</title>
+      <link>https://lwxn.github.io/posts/20-valid-parentheses/</link>
+      <pubDate>Thu, 21 Jan 2021 20:47:10 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/20-valid-parentheses/</guid>
+      <description>class Solution { public: bool isValid(string s) { stack&amp;lt;char&amp;gt;ss; for(int i = 0;i&amp;lt;s.size();i++) { if(s[i] == &amp;#39;(&amp;#39; || s[i] == &amp;#39;[&amp;#39; || s[i] == &amp;#39;{&amp;#39;) { ss.push(s[i]); } else { if(s[i] == &amp;#39;)&amp;#39;) { if(!ss.empty()&amp;amp;&amp;amp;ss.top() == &amp;#39;(&amp;#39;) ss.pop(); else return false; } if(s[i] == &amp;#39;}&amp;#39;) { if(!ss.empty()&amp;amp;&amp;amp;ss.top() == &amp;#39;{&amp;#39;) ss.pop(); else return false; } if(s[i] == &amp;#39;]&amp;#39;) { if(!ss.empty()&amp;amp;&amp;amp;ss.top() == &amp;#39;[&amp;#39;) ss.pop(); else return false; } } } return ss.empty(); } };``` </description>
+    </item>
+    
+    <item>
+      <title>19 Remove Nth Node From End of List</title>
+      <link>https://lwxn.github.io/posts/19-remove-nth-node-from-end-of-list/</link>
+      <pubDate>Thu, 21 Jan 2021 20:35:12 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/19-remove-nth-node-from-end-of-list/</guid>
+      <description>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode() : val(0), next(nullptr) {} * ListNode(int x) : val(x), next(nullptr) {} * ListNode(int x, ListNode *next) : val(x), next(next) {} * }; */ class Solution { public: ListNode* removeNthFromEnd(ListNode* head, int n) { ListNode* p = head; int len = 0; while(p) { p = p-&amp;gt;next; len++; } len = len - n; ListNode* ans = new ListNode(0,head); ListNode* b = ans,*r = nullptr; p = head; r = p-&amp;gt;next; while(len) { b = p; p = p-&amp;gt;next; r = r-&amp;gt;next; len --; } b-&amp;gt;next = r; p-&amp;gt;next = nullptr; return ans-&amp;gt;next; } }; </description>
+    </item>
+    
+    <item>
+      <title>18 4Sum</title>
+      <link>https://lwxn.github.io/posts/18-4sum/</link>
+      <pubDate>Thu, 21 Jan 2021 20:24:45 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/18-4sum/</guid>
+      <description>三数之和加个循环
+class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; fourSum(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;ans; sort(nums.begin(),nums.end()); int n = nums.size(); for(int l = 0;l&amp;lt;n;l++) { while(l != 0 &amp;amp;&amp;amp; l&amp;lt;n &amp;amp;&amp;amp; nums[l] == nums[l-1]) l++; for(int i = l+1;i&amp;lt;n;i++) { while(i != l+1 &amp;amp;&amp;amp; i&amp;lt;n &amp;amp;&amp;amp; nums[i] == nums[i-1]) i++; int j = i + 1; int k = n - 1; while(j&amp;lt;k) { int t = nums[i] + nums[j] +nums[k] + nums[l]; if(t == target) { ans.</description>
+    </item>
+    
+    <item>
+      <title>17 Letter Combinations of a Phone Number</title>
+      <link>https://lwxn.github.io/posts/17-letter-combinations-of-a-phone-number/</link>
+      <pubDate>Thu, 21 Jan 2021 20:01:06 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/17-letter-combinations-of-a-phone-number/</guid>
+      <description>class Solution { public: vector&amp;lt;string&amp;gt;ans; vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;num = {{&#39;a&#39;,&#39;b&#39;,&#39;c&#39;},{&#39;d&#39;,&#39;e&#39;,&#39;f&#39;}, {&#39;g&#39;,&#39;h&#39;,&#39;i&#39;},{&#39;j&#39;,&#39;k&#39;,&#39;l&#39;},{&#39;m&#39;,&#39;n&#39;,&#39;o&#39;},{&#39;p&#39;,&#39;q&#39;,&#39;r&#39;,&#39;s&#39;}, {&#39;t&#39;,&#39;u&#39;,&#39;v&#39;},{&#39;w&#39;,&#39;x&#39;,&#39;y&#39;,&#39;z&#39;}}; vector&amp;lt;string&amp;gt; letterCombinations(string digits) { if(digits.size() == 0) return ans; string s = &amp;quot;&amp;quot;; dfs(s,0,digits); return ans; } void dfs(string s,int begin,string digits) { if(begin == digits.size()) { ans.push_back(s); return; } int t = digits[begin] - &#39;2&#39;; for(char c : num[t]) { s.push_back(c); dfs(s,begin+1,digits); s.pop_back(); } } };``` </description>
+    </item>
+    
+    <item>
+      <title>16 3Sum Closest</title>
+      <link>https://lwxn.github.io/posts/16-3sum-closest/</link>
+      <pubDate>Thu, 21 Jan 2021 19:39:29 +0800</pubDate>
+      
+      <guid>https://lwxn.github.io/posts/16-3sum-closest/</guid>
+      <description>这道题蛮简单的，双指针走起
+class Solution { public: int threeSumClosest(vector&amp;lt;int&amp;gt;&amp;amp; nums, int target) { sort(nums.begin(),nums.end()); int n = nums.size(); int tmp = nums[0] + nums[1] +nums[2]; for(int i = 0;i&amp;lt;n;i++) { while(i != 0 &amp;amp;&amp;amp; i&amp;lt;n &amp;amp;&amp;amp; nums[i] == nums[i-1]) i++; int j = i + 1; int k = n - 1; while(j&amp;lt;k) { int t = nums[i] + nums[j] +nums[k]; if(abs(t - target) &amp;lt; abs(tmp - target)) { tmp = t; } if(t &amp;gt; target &amp;amp;&amp;amp; j&amp;lt;k) k--; else if(t &amp;lt; target &amp;amp;&amp;amp; j&amp;lt;k) j++; else{ return t; } } } return tmp; } };``` </description>
+    </item>
+    
     <item>
       <title>15 3Sum</title>
       <link>https://lwxn.github.io/posts/15-3sum/</link>

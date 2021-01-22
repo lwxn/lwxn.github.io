@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Posts | My New Hugo Site</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="https://lwxn.github.io/posts/" />
+<link href="https://lwxn.github.io/assets/css/stylesheet.min.bf7acbee82cb130459af40fbb0cbcd5e33f292ca2084fba9d532ddb596d7a9e5.css" integrity="sha256-v3rL7oLLEwRZr0D7sMvNXjPyksoghPup1TLdtZbXqeU=" rel="preload stylesheet"
+    as="style">
+
+<link rel="icon" href="https://lwxn.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lwxn.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lwxn.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://lwxn.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://lwxn.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.79.1" />
+<link rel="alternate" type="application/rss&#43;xml" href="https://lwxn.github.io/posts/index.xml">
+
+
+<meta property="og:title" content="Posts" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lwxn.github.io/posts/" />
+<meta property="og:updated_time" content="2021-01-22T13:45:50+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+
+
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        .theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://lwxn.github.io/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <span class="logo-switches">
+                <span class="theme-toggle" title="(Alt + T)">
+                    <a id="theme-toggle" accesskey="t">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </a>
+                </span>
+                
+            </span>
+        </div>
+        <ul class="menu" id="menu" onscroll="menu_on_scroll()"></ul>
+    </nav>
+</header>
+
+    <main class="main"> 
+<header class="page-header">
+  <h1>Posts</h1>
+</header>
+
+
+
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      4 Median of Two Sorted Arrays
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: double findMedianSortedArrays(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { int m = nums1.size(); int n = nums2.size(); int k1,k2; //odd  if( (m&#43;n)%2 == 0) { k1 = (m&#43;n)/2; k2 = k1-1; } else { k1 = (m&#43;n)/2; k2 = k1; } int i = 0,j = 0; int temp = 0; int t = 0; while(i&lt;nums1.size() &amp;&amp; j &lt;nums2.size()) { if(nums1[i] &lt;= nums2[j]) { if(t == k1) temp &#43;= nums1[i]; if(t == k2) temp &#43;= nums1[i]; i&#43;&#43;; } else { if(t == k1) temp &#43;= nums2[j]; if(t == k2) temp &#43;= nums2[j]; j&#43;&#43;; } t&#43;&#43;; } while(i&lt;nums1....</p>
+  </section>
+  <footer class="entry-footer">January 17, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 4 Median of Two Sorted Arrays" href="https://lwxn.github.io/posts/4-median-of-two-sorted-arrays/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      3 Longest Substring Without Repeating Characters
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>滑动窗口
+class Solution { public: int lengthOfLongestSubstring(string s) { int ans = 0,i = 0,j = 1; if(s.size() == 1) ans = 1; unordered_map&lt;char,int&gt;Map; Map[s[i]] = i; while(i&lt;s.size() &amp;&amp; j&lt;s.size()) { auto it = Map.find(s[j]); if(it != Map.end() &amp;&amp; it-&gt;second &gt;= i) { ans = max(ans,j-i); i = Map[s[j]] &#43; 1; } else { Map[s[j]] = j; ans = max(ans,j-i&#43;1); j&#43;&#43;; } } return ans; } }; ...</p>
+  </section>
+  <footer class="entry-footer">January 17, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 3 Longest Substring Without Repeating Characters" href="https://lwxn.github.io/posts/3-longest-substring-without-repeating-characters/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      2 Add Two Numbers
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode() : val(0), next(nullptr) {} * ListNode(int x) : val(x), next(nullptr) {} * ListNode(int x, ListNode *next) : val(x), next(next) {} * }; */ class Solution { public: ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) { ListNode *p = new ListNode(0); ListNode *head = p; int c = 0; while(l1 &amp;&amp; l2) { int r = (l1-&gt;val &#43; l2-&gt;val &#43; c) %10; c = (l1-&gt;val &#43; l2-&gt;val &#43; c)/10; p-&gt;next = new ListNode(r); p = p-&gt;next; l1 = l1-&gt;next; l2 = l2-&gt;next; } while(l1) { int r = (l1-&gt;val &#43; c)%10; c = (l1-&gt;val &#43; c)/10; p-&gt;next = new ListNode(r); p = p-&gt;next; l1 = l1-&gt;next; } while(l2) { int r = (l2-&gt;val &#43; c)%10; c = (l2-&gt;val &#43; c)/10; p-&gt;next = new ListNode(r); p = p-&gt;next; l2 = l2-&gt;next; } if(c) { p-&gt;next = new ListNode(c); } return head-&gt;next; } }; &#39;&#39;&#39; ...</p>
+  </section>
+  <footer class="entry-footer">January 17, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 2 Add Two Numbers" href="https://lwxn.github.io/posts/2-add-two-numbers/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      1 Two Sum
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>第一种暴力解：
+class Solution { public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) { vector&lt;int&gt;ans; for(int i = 0;i&lt;nums.size();i&#43;&#43;) { for(int j = i&#43;1;j&lt;nums.size();j&#43;&#43;) { if(nums[i] &#43; nums[j] == target) { ans.push_back(i); ans.push_back(j); return ans; } } } return ans; } }; 第二种，使用hashmap
+class Solution { public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) { unordered_map&lt;int,int&gt;Map; vector&lt;int&gt;ans; for(int i = 0;i&lt;nums.size();i&#43;&#43;) { auto it = Map.find(target-nums[i]); if(it != Map.end()) { return {i,it-&gt;second}; } Map[nums[i]] = i; } return ans; } }; ...</p>
+  </section>
+  <footer class="entry-footer">January 17, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 1 Two Sum" href="https://lwxn.github.io/posts/1-two-sum/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      Hi，this is lwxn&#39;s blog
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>很高兴你可以看到我的小岛~...</p>
+  </section>
+  <footer class="entry-footer">January 8, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to Hi，this is lwxn&#39;s blog" href="https://lwxn.github.io/posts/introduction/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      今天好难过
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>一点点内心想法：
+2021/1/8：
+昨天梦见下雪了，真是可笑，广州这种地方是不会下雪的。但是睡梦中隐隐约约听见了风怒吼着卷动树叶的声音，像是冬天终于迎来了它的征程。这地方终于有了点冬天的味道，不是吗。
+2021/1/15：
+今天去医院了，emmmmm...</p>
+  </section>
+  <footer class="entry-footer">January 7, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 今天好难过" href="https://lwxn.github.io/posts/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://lwxn.github.io/posts/page/2/">« Prev Page</a>
+  </nav>
+</footer>
+
+    </main><footer class="footer">
+    <span>&copy; 2021 <a href="https://lwxn.github.io/">My New Hugo Site</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+
+
+<script defer src="https://lwxn.github.io/assets/js/highlight.min.27cd435cc9ed6abb4b496581b151804f79f366c412620272bb94e2f5f598ebcc.js" integrity="sha256-J81DXMntartLSWWBsVGAT3nzZsQSYgJyu5Ti9fWY68w="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                behavior: "smooth"
+            });
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.replaceState(null, null, `#${id}`);
+            }
+        });
+    });
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+
+</body>
+
+</html>

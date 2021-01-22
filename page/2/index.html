@@ -29,7 +29,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lwxn.github.io/" />
-<meta property="og:updated_time" content="2021-01-20T16:08:28+08:00" />
+<meta property="og:updated_time" content="2021-01-22T13:45:50+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="My New Hugo Site"/>
 <meta name="twitter:description" content=""/>
@@ -113,96 +113,150 @@
 
   <header class="entry-header">
     <h2>
-      4 Median of Two Sorted Arrays
+      15 3Sum
     </h2>
   </header>
   <section class="entry-content">
-    <p>class Solution { public: double findMedianSortedArrays(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { int m = nums1.size(); int n = nums2.size(); int k1,k2; //odd  if( (m&#43;n)%2 == 0) { k1 = (m&#43;n)/2; k2 = k1-1; } else { k1 = (m&#43;n)/2; k2 = k1; } int i = 0,j = 0; int temp = 0; int t = 0; while(i&lt;nums1.size() &amp;&amp; j &lt;nums2.size()) { if(nums1[i] &lt;= nums2[j]) { if(t == k1) temp &#43;= nums1[i]; if(t == k2) temp &#43;= nums1[i]; i&#43;&#43;; } else { if(t == k1) temp &#43;= nums2[j]; if(t == k2) temp &#43;= nums2[j]; j&#43;&#43;; } t&#43;&#43;; } while(i&lt;nums1....</p>
+    <p>这道题的关键，emm 双指针，然后移来移去，去除重复项，就这样。
+class Solution { public: vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums) { vector&lt;vector&lt;int&gt;&gt;ans; vector&lt;int&gt;t; int n = nums.size(); if(n &lt; 3) return ans; sort(nums.begin(),nums.end()); for(int i = 0;i&lt;n;i&#43;&#43;) { //跳过重复元素  while(i &gt; 0 &amp;&amp; i &lt; nums.size() &amp;&amp; nums[i] == nums[i-1] ) i&#43;&#43;; int j = i&#43;1,k = n-1; while(j&lt;k) { int t = nums[i] &#43;nums[j] &#43; nums[k]; if(t == 0) { ans.push_back({nums[i],nums[j],nums[k]}); j&#43;&#43;; k--; while(nums[j] == nums[j-1] &amp;&amp; j &lt; k) j&#43;&#43;; while(nums[k] == nums[k&#43;1] &amp;&amp; k &gt; j) k--; } else if(t &gt; 0) { k--; } else { j&#43;&#43;; } } } return ans; } }; ...</p>
+  </section>
+  <footer class="entry-footer">January 20, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 15 3Sum" href="https://lwxn.github.io/posts/15-3sum/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      14 Longest Common Prefix
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>先排序，后对比前后两个
+class Solution { public: string longestCommonPrefix(vector&lt;string&gt;&amp; strs) { if(strs.size() == 0) return &#34;&#34;; sort(strs.begin(),strs.end()); string s1 = strs.front(),s2 = strs.back(); string ans = &#34;&#34;; for(int i = 0;i&lt;min(s1.size(),s2.size());i&#43;&#43;) { if(s1[i] != s2[i]) break; ans &#43;= s1[i]; } return ans; } };``` ...</p>
+  </section>
+  <footer class="entry-footer">January 19, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 14 Longest Common Prefix" href="https://lwxn.github.io/posts/14-longest-common-prefix/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      13 Roman to Integer
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: int romanToInt(string s) { int nums1[7] = {1,5,10,50,100,500,1000}; int nums2[6] = {4,9,40,90,400,900}; vector&lt;string&gt;alphas1 = {&#34;I&#34;,&#34;V&#34;,&#34;X&#34;,&#34;L&#34;,&#34;C&#34;,&#34;D&#34;,&#34;M&#34;}; vector&lt;string&gt;alphas2 = {&#34;IV&#34;,&#34;IX&#34;,&#34;XL&#34;,&#34;XC&#34;,&#34;CD&#34;,&#34;CM&#34;}; int ans = 0,i = 0; while(i&lt;s.size()) { int flag = 0; if(i&#43;1 &lt; s.size()) { string t = s.substr(i,2); for(int j = 0;j&lt;alphas2.size();j&#43;&#43;) { if(t == alphas2[j]) { ans &#43;= nums2[j]; i &#43;= 2; flag = 1; break; } } } if(!flag) { for(int j = 0;j&lt;alphas1.size();j&#43;&#43;) { if(s[i] == alphas1[j][0]) { ans &#43;= nums1[j]; i &#43;= 1; break; } } } } return ans; } };``` ...</p>
+  </section>
+  <footer class="entry-footer">January 19, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 13 Roman to Integer" href="https://lwxn.github.io/posts/13-roman-to-integer/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      12 Integer to Roman
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: string intToRoman(int num) { int nums[13] = {1,4,5,9,10,40,50,90,100,400,500,900,1000}; string alphas[13] = {&#34;I&#34;,&#34;IV&#34;,&#34;V&#34;,&#34;IX&#34;,&#34;X&#34;,&#34;XL&#34;,&#34;L&#34;,&#34;XC&#34;,&#34;C&#34;,&#34;CD&#34;,&#34;D&#34;,&#34;CM&#34;,&#34;M&#34;},ans = &#34;&#34;; for(int i = 12;i&gt;=0 &amp;&amp; num;i--) { while(num &gt;= nums[i]) { ans = ans &#43; alphas[i]; num -= nums[i]; } } return ans; } };``` ...</p>
+  </section>
+  <footer class="entry-footer">January 18, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 12 Integer to Roman" href="https://lwxn.github.io/posts/12-integer-to-roman/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      11 Container With Most Water
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>star
+class Solution { public: int maxArea(vector&lt;int&gt;&amp; height) { int k1 = 0,n = height.size(),k2 = n-1; int Max = 0; int i = 0,j = n-1; while(j&gt;i) { Max = max(Max,min(height[j],height[i])*(j-i)); if(height[i] &lt; height[j]) i&#43;&#43;; else j--; } return Max; } };``` 双跳 ```c&#43;&#43; class Solution { public: int maxArea(vector&lt;int&gt;&amp; height) { int k1 = 0,n = height.size(),k2 = n-1; int Max = 0; int i = 0,j = n-1; while(j&gt;i) { Max = max(Max,min(height[j],height[i])*(j-i)); if(height[i] &lt; height[j]) i&#43;&#43;; else if(height[i] &gt; height[j])j--; else{ i&#43;&#43;; j--; } } return Max; } }; ...</p>
+  </section>
+  <footer class="entry-footer">January 18, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 11 Container With Most Water" href="https://lwxn.github.io/posts/11-container-with-most-water/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      9 Palindrome Number
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: bool isPalindrome(int x) { string s = to_string(x); for(int i = 0;i&lt;s.size();i&#43;&#43;) { if(s[i] != s[s.size()-i-1]) return false; } return true; } };``` ...</p>
+  </section>
+  <footer class="entry-footer">January 18, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 9 Palindrome Number" href="https://lwxn.github.io/posts/9-palindrome-number/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      8 String to Integer (Atoi)
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: int myAtoi(string s) { int i = 0,flag = 0; while(i&lt;s.size() &amp;&amp; s[i] == &#39; &#39;) i&#43;&#43;; if(i == s.size() || !(s[i] == &#39;&#43;&#39; || s[i] == &#39;-&#39; || isdigit(s[i]))) return 0; if(s[i] == &#39;&#43;&#39; || s[i] == &#39;-&#39;) { flag = s[i] == &#39;-&#39; ? 1:0; i&#43;&#43;; } long ans = 0; while(i&lt;s.size() &amp;&amp; isdigit(s[i])) { ans = ans*10 &#43; s[i] - &#39;0&#39;; if(flag) { if(-ans &gt; INT_MAX) return INT_MAX; if(-ans &lt; INT_MIN) return INT_MIN; } else { if(ans &gt; INT_MAX) return INT_MAX; if(ans &lt; INT_MIN) return INT_MIN; } i&#43;&#43;; } ans = flag ?...</p>
+  </section>
+  <footer class="entry-footer">January 18, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 8 String to Integer (Atoi)" href="https://lwxn.github.io/posts/8-string-to-integer-atoi/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      7 Reverse Integer
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: int reverse(int x) { long X = x; int flag = 0; if(X &lt; 0) { X = -X; flag = 1; } long ans = 0; string s = to_string(X); for(int i = s.size()-1;i&gt;=0;i--) ans = ans*10 &#43; s[i] - &#39;0&#39;; ans = flag ? -ans : ans; int Max = 2147483647; int Min = -2147483648; if(ans &lt;= Max &amp;&amp; ans &gt;= Min) return ans; else return 0; } }; ...</p>
+  </section>
+  <footer class="entry-footer">January 18, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 7 Reverse Integer" href="https://lwxn.github.io/posts/7-reverse-integer/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      6 ZigZag Conversion
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution { public: string convert(string s, int numRows) { if(s.size() == 0) return &#34;&#34;; int n = s.size(); vector&lt;vector&lt;char&gt;&gt;Map(numRows,vector&lt;char&gt;(n,&#39; &#39;)); int mode = 0; int i = 0; int x = -1,y = 0; while(i&lt;n) { //竖排  if(mode == 0) { for(int j = 0;j&lt;numRows &amp;&amp; i&lt;n;j&#43;&#43;) { if(j == 0) x&#43;&#43;; Map[j][x] = s[i]; y = j; i&#43;&#43;; } } else { for(int j = 1;j&lt;numRows-1 &amp;&amp; i&lt;n;j&#43;&#43;) { x&#43;&#43;; y--; Map[y][x] = s[i]; i&#43;&#43;; } } mode = (mode&#43;1)%2; } string ans = &#34;&#34;; for(int i = 0;i&lt;numRows;i&#43;&#43;) { for(int j = 0;j&lt;n;j&#43;&#43;) { if(Map[i][j] !...</p>
+  </section>
+  <footer class="entry-footer">January 18, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 6 ZigZag Conversion" href="https://lwxn.github.io/posts/6-zigzag-conversion/"></a>
+</article>
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      5 Longest Palindromic Substring
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>dp
+class Solution { public: string longestPalindrome(string s) { if(s.size() == 0) return &#34;&#34;; int n = s.size(),ans = 1,l1 = 0,l2 = 0; vector&lt;vector&lt;int&gt;&gt;dp(n,vector&lt;int&gt;(n,0)); for(int i = 0;i&lt;n;i&#43;&#43;) dp[i][i] = 1; for(int l = 1;l&lt;n;l&#43;&#43;) { for(int i = 0;i&lt;n-l;i&#43;&#43;) { int j = i&#43;l; if(j == i&#43;1) { dp[i][j] = s[i] == s[j] ? 2 : 0; } else { if(dp[i&#43;1][j-1] &amp;&amp; s[i] == s[j]) dp[i][j] = dp[i&#43;1][j-1] &#43; 2; } if(ans &lt; dp[i][j]) { ans = dp[i][j]; l1 = i; l2 = j; } } } return s....</p>
   </section>
   <footer class="entry-footer">January 17, 2021
 </footer>
-  <a class="entry-link" aria-label="post link to 4 Median of Two Sorted Arrays" href="https://lwxn.github.io/posts/4-median-of-two-sorted-arrays/"></a>
-</article>
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      3 Longest Substring Without Repeating Characters
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>滑动窗口
-class Solution { public: int lengthOfLongestSubstring(string s) { int ans = 0,i = 0,j = 1; if(s.size() == 1) ans = 1; unordered_map&lt;char,int&gt;Map; Map[s[i]] = i; while(i&lt;s.size() &amp;&amp; j&lt;s.size()) { auto it = Map.find(s[j]); if(it != Map.end() &amp;&amp; it-&gt;second &gt;= i) { ans = max(ans,j-i); i = Map[s[j]] &#43; 1; } else { Map[s[j]] = j; ans = max(ans,j-i&#43;1); j&#43;&#43;; } } return ans; } }; ...</p>
-  </section>
-  <footer class="entry-footer">January 17, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to 3 Longest Substring Without Repeating Characters" href="https://lwxn.github.io/posts/3-longest-substring-without-repeating-characters/"></a>
-</article>
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      2 Add Two Numbers
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode() : val(0), next(nullptr) {} * ListNode(int x) : val(x), next(nullptr) {} * ListNode(int x, ListNode *next) : val(x), next(next) {} * }; */ class Solution { public: ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) { ListNode *p = new ListNode(0); ListNode *head = p; int c = 0; while(l1 &amp;&amp; l2) { int r = (l1-&gt;val &#43; l2-&gt;val &#43; c) %10; c = (l1-&gt;val &#43; l2-&gt;val &#43; c)/10; p-&gt;next = new ListNode(r); p = p-&gt;next; l1 = l1-&gt;next; l2 = l2-&gt;next; } while(l1) { int r = (l1-&gt;val &#43; c)%10; c = (l1-&gt;val &#43; c)/10; p-&gt;next = new ListNode(r); p = p-&gt;next; l1 = l1-&gt;next; } while(l2) { int r = (l2-&gt;val &#43; c)%10; c = (l2-&gt;val &#43; c)/10; p-&gt;next = new ListNode(r); p = p-&gt;next; l2 = l2-&gt;next; } if(c) { p-&gt;next = new ListNode(c); } return head-&gt;next; } }; &#39;&#39;&#39; ...</p>
-  </section>
-  <footer class="entry-footer">January 17, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to 2 Add Two Numbers" href="https://lwxn.github.io/posts/2-add-two-numbers/"></a>
-</article>
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      1 Two Sum
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>第一种暴力解：
-class Solution { public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) { vector&lt;int&gt;ans; for(int i = 0;i&lt;nums.size();i&#43;&#43;) { for(int j = i&#43;1;j&lt;nums.size();j&#43;&#43;) { if(nums[i] &#43; nums[j] == target) { ans.push_back(i); ans.push_back(j); return ans; } } } return ans; } }; 第二种，使用hashmap
-class Solution { public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) { unordered_map&lt;int,int&gt;Map; vector&lt;int&gt;ans; for(int i = 0;i&lt;nums.size();i&#43;&#43;) { auto it = Map.find(target-nums[i]); if(it != Map.end()) { return {i,it-&gt;second}; } Map[nums[i]] = i; } return ans; } }; ...</p>
-  </section>
-  <footer class="entry-footer">January 17, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to 1 Two Sum" href="https://lwxn.github.io/posts/1-two-sum/"></a>
-</article>
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      Hi，this is lwxn&#39;s blog
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>很高兴你可以看到我的小岛~...</p>
-  </section>
-  <footer class="entry-footer">January 8, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to Hi，this is lwxn&#39;s blog" href="https://lwxn.github.io/posts/introduction/"></a>
-</article>
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      今天好难过
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>一点点内心想法：
-2021/1/8：
-昨天梦见下雪了，真是可笑，广州这种地方是不会下雪的。但是睡梦中隐隐约约听见了风怒吼着卷动树叶的声音，像是冬天终于迎来了它的征程。这地方终于有了点冬天的味道，不是吗。
-2021/1/15：
-今天去医院了，emmmmm...</p>
-  </section>
-  <footer class="entry-footer">January 7, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to 今天好难过" href="https://lwxn.github.io/posts/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/"></a>
+  <a class="entry-link" aria-label="post link to 5 Longest Palindromic Substring" href="https://lwxn.github.io/posts/5-longest-palindromic-substring/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://lwxn.github.io/">« Prev Page</a>
+    <a class="next" href="https://lwxn.github.io/page/3/">Next Page »</a>
   </nav>
 </footer>
 
